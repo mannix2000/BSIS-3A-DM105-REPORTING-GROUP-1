@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lean Methodology — Case-Based Exam (40 Questions)</title>
+<style>
+  :root{font-family:Arial,Helvetica,sans-serif;color:#0f172a}
+  body{background:#f3f4f6;margin:0;padding:20px;line-height:1.45}
+  .wrap{max-width:980px;margin:0 auto}
+  header{display:flex;align-items:center;gap:16px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+  header h1{font-size:1.05rem;margin:0}
+  .timer{margin-left:auto;background:#fff2f2;color:#9b111e;padding:8px 12px;border-radius:999px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(155,17,30,.06)}
+  .card{background:#fff;padding:18px;margin-top:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.04)}
+  label{display:block;font-weight:700;margin-bottom:6px}
+  .meta{color:#6b7280;margin-bottom:12px}
+  select,input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #e5e7eb;margin-bottom:12px;font-size:0.95rem}
+  button{background:#1f6feb;color:#fff;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+  button.secondary{background:#eef2ff;color:#1f6feb}
+  .muted{color:#6b7280;font-size:.9rem}
+  .question{padding:12px;border-radius:8px;border:1px solid #eef2f5;margin-bottom:12px;background:#fbfcfe}
+  .qcase{font-weight:600;margin-bottom:8px}
+  .small{font-size:.92rem;color:#374151}
+  #submitMsg{display:none;margin-top:12px;padding:10px;border-radius:8px;background:#ecfdf5;color:#065f46;font-weight:700}
+  @media(min-width:800px){ header h1{font-size:1.15rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Lean Methodology — Case-Based Exam (40 Questions)</h1>
+    <div class="timer" id="timer">35:00</div>
+  </header>
+
+  <div class="card" id="accessCodeSection">
+    <label>Enter Exam Access Code</label>
+    <input id="examCodeInput" type="text" placeholder="Enter access code (provided by instructor)" />
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="examCodeBtn">Start Exam</button>
+      <div class="muted" style="margin-left:auto">Access code required — contact your instructor</div>
+    </div>
+    <p id="codeError" class="muted" style="color:#b91c1c;display:none;margin-top:8px">Incorrect code. Try again.</p>
+  </div>
+
+  <form id="examForm" class="card" autocomplete="off" style="display:none">
+    <label>Student Name</label>
+    <input id="studentName" type="text" placeholder="Last name, First name" />
+
+    <p class="meta">Instructions: Each item is a short case — choose the most appropriate Lean practice. Choices are similar length and analytical.</p>
+
+    <div id="questions">
+      <!-- Q1 -->
+      <div class="question">
+        <div class="qcase">Case 1 — Warehouse aisles are cluttered, causing long retrieval times and errors.</div>
+        <div class="small">Which immediate Lean action improves flow and reduces waste in the area?</div>
+        <label>1.</label>
+        <select name="q1">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Apply 5S to sort, set in order, shine, standardize and sustain the workspace.</option>
+          <option value="B">B. Increase staffing levels temporarily to clear backlog and maintain throughput.</option>
+          <option value="C">C. Build larger storage racks to accommodate more inventory without reorganizing.</option>
+          <option value="D">D. Outsource retrieval tasks to an external provider to avoid internal changes now.</option>
+        </select>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question">
+        <div class="qcase">Case 2 — Production has uneven takt times causing some stations to wait frequently.</div>
+        <div class="small">What Lean technique evens production to match customer demand and reduce waiting?</div>
+        <label>2.</label>
+        <select name="q2">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement Heijunka to level load and smooth production across processes.</option>
+          <option value="B">B. Increase batch sizes at slow stations to improve perceived efficiency quickly.</option>
+          <option value="C">C. Add manual buffers between every station to absorb any variation invariably.</option>
+          <option value="D">D. Rotate staff randomly to different stations without adjusting workloads systematically.</option>
+        </select>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question">
+        <div class="qcase">Case 3 — A process has frequent defects that disrupt downstream flow and rework.</div>
+        <div class="small">Which Lean practice ensures quality is built into the process at the source?</div>
+        <label>3.</label>
+        <select name="q3">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Apply poka-yoke mistake-proofing at the workstation to prevent incorrect assembly.</option>
+          <option value="B">B. Increase final inspection headcount to catch defects before shipping.</option>
+          <option value="C">C. Delay quality checks until after production to minimize initial cycle time.</option>
+          <option value="D">D. Accept a higher defect rate and compensate with a warranty program for customers.</option>
+        </select>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question">
+        <div class="qcase">Case 4 — Setup changeovers take hours, limiting flexibility for small customer orders.</div>
+        <div class="small">Which method reduces changeover time to enable smaller batch production promptly?</div>
+        <label>4.</label>
+        <select name="q4">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use SMED techniques to separate internal and external setup activities and streamline steps.</option>
+          <option value="B">B. Schedule larger runs to amortize long setup times over more units produced.</option>
+          <option value="C">C. Hire specialist teams to perform changeovers slowly but with high accuracy always.</option>
+          <option value="D">D. Avoid changeovers by standardizing only one product variant across the shop floor.</option>
+        </select>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question">
+        <div class="qcase">Case 5 — Team lacks visibility of process flows and lead times across steps.</div>
+        <div class="small">Which Lean tool uncovers value-add and non-value-add time across the value stream?</div>
+        <label>5.</label>
+        <select name="q5">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Create a Value Stream Map to visualize flow, lead time, and waste opportunities.</option>
+          <option value="B">B. Implement a complex ERP report schedule to gather historical throughput metrics monthly.</option>
+          <option value="C">C. Rely on individual managers to estimate delays without a standardized mapping tool.</option>
+          <option value="D">D. Outsource analysis to consultants without team involvement for a quick fix analysis.</option>
+        </select>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question">
+        <div class="qcase">Case 6 — Inventory piles up before one bottleneck machine every afternoon consistently.</div>
+        <div class="small">Which Lean concept identifies and addresses the limiting step to improve flow?</div>
+        <label>6.</label>
+        <select name="q6">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use bottleneck analysis and elevate capacity or remove non-value tasks at constraint.</option>
+          <option value="B">B. Increase inventory upstream to ensure the bottleneck always has something to process.</option>
+          <option value="C">C. Move the bottleneck machine to a separate factory to isolate its issues entirely.</option>
+          <option value="D">D. Hire additional temporary operators at non-bottleneck stations to improve utilization.</option>
+        </select>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question">
+        <div class="qcase">Case 7 — Daily changeover of priorities causes confusion about current work to do.</div>
+        <div class="small">Which visual Lean practice communicates current priorities and status to everyone instantly?</div>
+        <label>7.</label>
+        <select name="q7">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement visual management boards and Kanban signals to show work and priorities.</option>
+          <option value="B">B. Send daily emailed lists to all staff with priority details for reference later.</option>
+          <option value="C">C. Keep priorities in the supervisor's notebook to avoid changing public displays frequently.</option>
+          <option value="D">D. Rotate spoken announcements on the shop floor hourly to inform people verbally only.</option>
+        </select>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question">
+        <div class="qcase">Case 8 — Cycle time at a cell varies greatly depending on operator and shift.</div>
+        <div class="small">Which Lean practice standardizes work to reduce variation and improve predictability?</div>
+        <label>8.</label>
+        <select name="q8">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Develop standardized work instructions with takt-aligned steps and visual aids.</option>
+          <option value="B">B. Allow each operator to use their preferred method to maximize individual speed.</option>
+          <option value="C">C. Remove documented procedures to encourage creative approaches per shift regularly.</option>
+          <option value="D">D. Increase supervision to micromanage activities rather than standardize processes.</option>
+        </select>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question">
+        <div class="qcase">Case 9 — Frequent short interruptions cause unplanned stoppages and lost production time.</div>
+        <div class="small">Which approach reduces unplanned downtime and improves overall equipment availability?</div>
+        <label>9.</label>
+        <select name="q9">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement Total Productive Maintenance to engage operators in routine care and checks.</option>
+          <option value="B">B. Accept interruptions as inevitable and schedule extra shifts to recover lost output.</option>
+          <option value="C">C. Replace equipment frequently rather than maintain it when stoppages occur repeatedly.</option>
+          <option value="D">D. Remove operator responsibilities for checking equipment to avoid distracting production tasks.</option>
+        </select>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question">
+        <div class="qcase">Case 10 — Customer demand frequently changes and forecasts are often inaccurate.</div>
+        <div class="small">Which Lean supply approach reduces inventory and reacts faster to actual demand signals?</div>
+        <label>10.</label>
+        <select name="q10">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Adopt pull-based Kanban systems to replenish only what customers actually consume.</option>
+          <option value="B">B. Increase safety stock broadly across SKUs to cover any forecasting errors always.</option>
+          <option value="C">C. Ignore demand changes and produce to a fixed long-term plan to simplify scheduling.</option>
+          <option value="D">D. Move ordering decisions to customers directly without internal inventory controls at all.</option>
+        </select>
+      </div>
+
+      <!-- Q11 -->
+      <div class="question">
+        <div class="qcase">Case 11 — A process contains many handoffs and waits between departments causing delays.</div>
+        <div class="small">Which Lean principle reduces delays by improving handoffs and process continuity?</div>
+        <label>11.</label>
+        <select name="q11">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Create continuous flow by reorganizing work cells and minimizing handoffs between areas.</option>
+          <option value="B">B. Add clerical staff to document handoffs more thoroughly and create more paperwork.</option>
+          <option value="C">C. Batch multiple work orders to reduce the number of handoffs performed each day.</option>
+          <option value="D">D. Increase inspection points between departments to catch handoff errors later consistently.</option>
+        </select>
+      </div>
+
+      <!-- Q12 -->
+      <div class="question">
+        <div class="qcase">Case 12 — A recent Kaizen event identified many improvement ideas but no one acted on them.</div>
+        <div class="small">Which follow-up governance ensures improvements are implemented and sustained over time?</div>
+        <label>12.</label>
+        <select name="q12">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Assign owners, set deadlines and track PDCA cycles until the improvements are sustained.</option>
+          <option value="B">B. Archive the Kaizen ideas in a file and revisit them only after a year of planning.</option>
+          <option value="C">C. Rely on volunteers to implement improvements when they find spare time occasionally.</option>
+          <option value="D">D. Immediately outsource implementation to external contractors without staff involvement.</option>
+        </select>
+      </div>
+
+      <!-- Q13 -->
+      <div class="question">
+        <div class="qcase">Case 13 — A supplier delivers variable quality and causes frequent line stops.</div>
+        <div class="small">Which supplier-focused Lean practice improves incoming quality and long-term reliability?</div>
+        <label>13.</label>
+        <select name="q13">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Collaborate on supplier development and implement quality standards and audits collaboratively.</option>
+          <option value="B">B. Accept variability and increase downstream inspection to catch defects later consistently.</option>
+          <option value="C">C. Switch suppliers randomly to find the cheapest available option each month routinely.</option>
+          <option value="D">D. Request suppliers to deliver larger batches so defects are diluted across more units.</option>
+        </select>
+      </div>
+
+      <!-- Q14 -->
+      <div class="question">
+        <div class="qcase">Case 14 — Process mapping shows many activities that do not add customer value.</div>
+        <div class="small">How should the team prioritize which activities to eliminate or simplify first?</div>
+        <label>14.</label>
+        <select name="q14">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Classify activities as value-add, non-value-add and required non-value-add then eliminate NVA.</option>
+          <option value="B">B. Keep all activities to avoid risk of removing something that might be useful later.</option>
+          <option value="C">C. Outsource non-value tasks without analyzing whether they can be removed entirely.</option>
+          <option value="D">D. Automate every step equally regardless of its impact on customer-perceived value now.</option>
+        </select>
+      </div>
+
+      <!-- Q15 -->
+      <div class="question">
+        <div class="qcase">Case 15 — Teams struggle to identify root causes when problems reoccur after fixes.</div>
+        <div class="small">Which problem-solving tool helps find underlying causes and prevent recurrence effectively?</div>
+        <label>15.</label>
+        <select name="q15">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Conduct structured root cause analysis such as 5 Whys or fishbone diagrams with data support.</option>
+          <option value="B">B. Apply quick fixes repeatedly until the problem appears to disappear temporarily each time.</option>
+          <option value="C">C. Attribute reoccurrence to bad luck and document incidents without analysis or action.</option>
+          <option value="D">D. Replace personnel involved in the issue rather than investigating systemic causes deeply.</option>
+        </select>
+      </div>
+
+      <!-- Q16 -->
+      <div class="question">
+        <div class="qcase">Case 16 — A process has long lead time though cycle times are short at each station.</div>
+        <div class="small">Which metric and analysis clarifies where non-value wait time accumulates across the flow?</div>
+        <label>16.</label>
+        <select name="q16">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Measure lead time and process cycle efficiency to identify waiting and transfer delays.</option>
+          <option value="B">B. Only measure throughput and ignore lead time documentation entirely for simplicity.</option>
+          <option value="C">C. Measure machine utilization exclusively without examining queues or waiting times between steps.</option>
+          <option value="D">D. Focus on headcount metrics as primary indicator of lead time improvement potential only.</option>
+        </select>
+      </div>
+
+      <!-- Q17 -->
+      <div class="question">
+        <div class="qcase">Case 17 — A production line frequently experiences variation from operator technique.</div>
+        <div class="small">What combined approach reduces variability while engaging operators in continuous improvement?</div>
+        <label>17.</label>
+        <select name="q17">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement standardized work plus operator-led Kaizen to improve methods continuously.</option>
+          <option value="B">B. Enforce strict penalties for deviation to deter variations without educating staff.</option>
+          <option value="C">C. Rotate operators hourly to average out technique differences without documentation change.</option>
+          <option value="D">D. Outsource the most variable tasks to third parties to remove internal variation exposure.</option>
+        </select>
+      </div>
+
+      <!-- Q18 -->
+      <div class="question">
+        <div class="qcase">Case 18 — A shop floor has spaghetti-like material flows leading to wasteful motions.</div>
+        <div class="small">Which Lean activity maps physical movement and reveals layout improvement opportunities?</div>
+        <label>18.</label>
+        <select name="q18">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Create spaghetti diagrams to visualize flow and redesign layout for minimal travel distances.</option>
+          <option value="B">B. Increase walking allowances in the process time estimates to accept motion inherently.</option>
+          <option value="C">C. Add more conveyors arbitrarily to move material further without redesigning flow paths.</option>
+          <option value="D">D. Reduce staff break times to ensure people walk less and work more continuously instead.</option>
+        </select>
+      </div>
+
+      <!-- Q19 -->
+      <div class="question">
+        <div class="qcase">Case 19 — A small Kaizen project reduced defects but increased cycle time unexpectedly.</div>
+        <div class="small">Which PDCA step should the team revisit to balance quality and flow outcomes appropriately?</div>
+        <label>19.</label>
+        <select name="q19">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Check and adjust the plan and standard work to ensure improvements do not harm flow.</option>
+          <option value="B">B. Abandon the change immediately because any increase in cycle time is unacceptable always.</option>
+          <option value="C">C. Ignore the cycle time change since defects reduction is the only metric that matters.</option>
+          <option value="D">D. Replace the team lead as the primary response to any undesired side effects quickly.</option>
+        </select>
+      </div>
+
+      <!-- Q20 -->
+      <div class="question">
+        <div class="qcase">Case 20 — A process improvement requires data but teams distrust existing metrics accuracy.</div>
+        <div class="small">Which action builds reliable measurement to support evidence-based Lean decisions rapidly?</div>
+        <label>20.</label>
+        <select name="q20">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Standardize measurement methods and verify data collection with gemba checks and audits.</option>
+          <option value="B">B. Use anecdotal observations rather than invest time in improving metric reliability now.</option>
+          <option value="C">C. Stop measuring entirely and make decisions based on intuition to save effort immediately.</option>
+          <option value="D">D. Outsource data collection to an external party without internal validation or context checks.</option>
+        </select>
+      </div>
+
+      <!-- Q21 -->
+      <div class="question">
+        <div class="qcase">Case 21 — A workstation experiences variability due to unpredictable supplier lead times.</div>
+        <div class="small">Which Lean procurement approach reduces impact of supplier variability on internal flow?</div>
+        <label>21.</label>
+        <select name="q21">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement supplier Kanban and smaller, more frequent deliveries to stabilize the flow.</option>
+          <option value="B">B. Increase internal inventory buffers broadly to isolate production from supplier variation.</option>
+          <option value="C">C. Change suppliers frequently to chase the lowest-cost vendor without consistency focus.</option>
+          <option value="D">D. Reduce production scheduling frequency so supplier variability matters less over time.</option>
+        </select>
+      </div>
+
+      <!-- Q22 -->
+      <div class="question">
+        <div class="qcase">Case 22 — Operators call maintenance for many small machine issues interrupting production.</div>
+        <div class="small">Which Lean practice empowers teams to prevent minor stops and improve uptime sustainably?</div>
+        <label>22.</label>
+        <select name="q22">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Train operators in autonomous maintenance and daily checks as part of TPM routines.</option>
+          <option value="B">B. Centralize all maintenance and prohibit operators from touching equipment entirely.</option>
+          <option value="C">C. Ignore small issues until a major failure occurs to reduce low-priority work load.</option>
+          <option value="D">D. Hire dedicated external technicians to visit monthly rather than upskill internal staff.</option>
+        </select>
+      </div>
+
+      <!-- Q23 -->
+      <div class="question">
+        <div class="qcase">Case 23 — A project uses long value streams with infrequent feedback from customers.</div>
+        <div class="small">Which Lean approach shortens the feedback loop and validates value early and often?</div>
+        <label>23.</label>
+        <select name="q23">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Break work into smaller increments and deliver frequently to obtain rapid customer feedback.</option>
+          <option value="B">B. Continue long projects to complete full features before seeking any customer opinion upfront.</option>
+          <option value="C">C. Rely solely on initial specifications and avoid changes based on later feedback routinely.</option>
+          <option value="D">D. Use annual market studies instead of incremental validation to decide product direction slowly.</option>
+        </select>
+      </div>
+
+      <!-- Q24 -->
+      <div class="question">
+        <div class="qcase">Case 24 — Several near-miss quality events occurred that were not recorded or analyzed.</div>
+        <div class="small">Which practice captures early warning signals to prevent future defects proactively?</div>
+        <label>24.</label>
+        <select name="q24">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Implement near-miss reporting and root cause review to address risks before failure occurs.</option>
+          <option value="B">B. Only record actual failures and ignore near-misses to reduce reporting burden significantly.</option>
+          <option value="C">C. Penalize staff for reporting near-misses to discourage unnecessary paperwork and noise.</option>
+          <option value="D">D. Wait for external audits to reveal issues rather than encouraging internal proactive reporting.</option>
+        </select>
+      </div>
+
+      <!-- Q25 -->
+      <div class="question">
+        <div class="qcase">Case 25 — A team wants to prioritize improvement projects but resources are limited.</div>
+        <div class="small">Which prioritization approach selects projects with greatest impact and feasible effort first?</div>
+        <label>25.</label>
+        <select name="q25">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use impact-effort matrices and select high-impact, low-effort Kaizen candidates first.</option>
+          <option value="B">B. Randomly pick projects each month to distribute focus across many areas equally.</option>
+          <option value="C">C. Prioritize projects by department politics rather than objective impact estimates routinely.</option>
+          <option value="D">D. Choose only large strategic projects that require significant investment and take long time.</option>
+        </select>
+      </div>
+
+      <!-- Q26 -->
+      <div class="question">
+        <div class="qcase">Case 26 — A cell needs to calculate takt time to align production with customer demand.</div>
+        <div class="small">Which formula yields takt time used to pace production to meet demand reliably?</div>
+        <label>26.</label>
+        <select name="q26">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Takt time = Available production time per period divided by customer demand in that period.</option>
+          <option value="B">B. Takt time = Total units produced divided by number of operators on the line usually.</option>
+          <option value="C">C. Takt time = Machine cycle time multiplied by number of shifts scheduled per day always.</option>
+          <option value="D">D. Takt time = Inventory level divided by average daily shipments for all SKUs combined.</option>
+        </select>
+      </div>
+
+      <!-- Q27 -->
+      <div class="question">
+        <div class="qcase">Case 27 — A process includes steps that are necessary for compliance but not value-add to customers.</div>
+        <div class="small">How should the team treat these required non-value activities in process improvement work?</div>
+        <label>27.</label>
+        <select name="q27">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Minimize their time and automate where possible while keeping legal and compliance integrity intact.</option>
+          <option value="B">B. Eliminate required steps entirely to reduce cycle time irrespective of compliance consequences.</option>
+          <option value="C">C. Expand required steps to gather more documentation even if it increases processing time.</option>
+          <option value="D">D. Ignore required activities during improvement to focus strictly on customer-facing tasks alone.</option>
+        </select>
+      </div>
+
+      <!-- Q28 -->
+      <div class="question">
+        <div class="qcase">Case 28 — A shop floor uses visual signals but they are inconsistent and misunderstood by staff.</div>
+        <div class="small">Which action improves the effectiveness of visual controls and operator interpretation?</div>
+        <label>28.</label>
+        <select name="q28">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Standardize visual conventions, train staff and audit adherence to visual management rules.</option>
+          <option value="B">B. Remove visual signals entirely and rely on verbal instructions for all tasks instead.</option>
+          <option value="C">C. Add more colored lights and signs randomly to increase visibility without a standard.</option>
+          <option value="D">D. Outsource visual design to external marketers with no operator involvement at all.</option>
+        </select>
+      </div>
+
+      <!-- Q29 -->
+      <div class="question">
+        <div class="qcase">Case 29 — A process improvement required capital investment but ROI was unclear to leadership.</div>
+        <div class="small">Which financial framing helps justify Lean investments and secure leadership commitment?</div>
+        <label>29.</label>
+        <select name="q29">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Present cost-of-poor-quality, lead-time savings and payback timelines with scenario analysis.</option>
+          <option value="B">B. Request discretionary funds without ROI details and hope leadership approves based on trust.</option>
+          <option value="C">C. Hide expected costs and only report benefits after implementation is completed later.</option>
+          <option value="D">D. Reject any financial rationale and argue improvements are valuable regardless of numbers always.</option>
+        </select>
+      </div>
+
+      <!-- Q30 -->
+      <div class="question">
+        <div class="qcase">Case 30 — Several critical processes lack clear ownership and responsibilities for standards.</div>
+        <div class="small">Which governance approach ensures standards are maintained and continuous improvement sustained?</div>
+        <label>30.</label>
+        <select name="q30">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Assign process owners, document standards and include them in regular audit and Kaizen cycles.</option>
+          <option value="B">B. Leave standards undefined to encourage individual creativity and ad-hoc process variations.</option>
+          <option value="C">C. Rotate ownership monthly so no single person is accountable for standards consistency long-term.</option>
+          <option value="D">D. Centralize standards in a distant office without local practitioner input or review processes.</option>
+        </select>
+      </div>
+
+      <!-- Q31 -->
+      <div class="question">
+        <div class="qcase">Case 31 — A cross-functional A3 report is being prepared to solve a chronic problem.</div>
+        <div class="small">Which element is essential to a robust A3 to drive aligned, data-driven improvement decisions?</div>
+        <label>31.</label>
+        <select name="q31">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. A clear problem statement, root cause analysis, countermeasures, and follow-up plan documented.</option>
+          <option value="B">B. A lengthy narrative with opinions but no supporting data or measurable targets included.</option>
+          <option value="C">C. A list of desired outcomes only without analysis or identification of underlying causes properly.</option>
+          <option value="D">D. A directive from management without team involvement to ensure rapid top-down implementation.</option>
+        </select>
+      </div>
+
+      <!-- Q32 -->
+      <div class="question">
+        <div class="qcase">Case 32 — A pilot improvement reduced defects but increased operator workload unsustainably.</div>
+        <div class="small">Which PDCA-based next step balances improvement benefits with sustainable work conditions?</div>
+        <label>32.</label>
+        <select name="q32">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Adjust the plan or countermeasure, pilot again and standardize only if workload is sustainable.</option>
+          <option value="B">B. Implement the change across all areas immediately regardless of operator feedback or capacity.</option>
+          <option value="C">C. Abandon any improvement that increases operator tasks irrespective of defect improvements.</option>
+          <option value="D">D. Increase operator shift lengths to absorb extra work rather than redesigning the process continuously.</option>
+        </select>
+      </div>
+
+      <!-- Q33 -->
+      <div class="question">
+        <div class="qcase">Case 33 — Management wants visible daily metrics to drive problem solving at the gemba.</div>
+        <div class="small">Which metric set and practice best supports daily gemba problem identification and action?</div>
+        <label>33.</label>
+        <select name="q33">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Show OEE, lead time, defects and daily countermeasure status and review at daily huddles.</option>
+          <option value="B">B. Publish monthly financial reports only to the gemba without frontline daily metrics shown.</option>
+          <option value="C">C. Keep metrics private to managers and avoid public displays to reduce pressure on teams.</option>
+          <option value="D">D. Display long strategic KPIs only, ignoring the operational metrics needed for daily improvement.</option>
+        </select>
+      </div>
+
+      <!-- Q34 -->
+      <div class="question">
+        <div class="qcase">Case 34 — A new process was automated but unexpected exceptions increased error handling time.</div>
+        <div class="small">Which approach ensures automation handles exceptions elegantly and reduces operator burden?</div>
+        <label>34.</label>
+        <select name="q34">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Design automation with clear exception paths, alerting and human-in-the-loop handoffs defined.</option>
+          <option value="B">B. Remove human oversight entirely and let automation fail silently when exceptions occur randomly.</option>
+          <option value="C">C. Expand manual exception handling teams instead of improving automation logic and design iteratively.</option>
+          <option value="D">D. Disable automation to return to a purely manual process to avoid exception complexities fully.</option>
+        </select>
+      </div>
+
+      <!-- Q35 -->
+      <div class="question">
+        <div class="qcase">Case 35 — Leaders want to spread improvement culture beyond pilot areas across the organization.</div>
+        <div class="small">Which approach effectively scales Lean thinking while keeping local adaptation intact?</div>
+        <label>35.</label>
+        <select name="q35">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Deploy trained coaches, share success stories and enable local Kaizen with central support.</option>
+          <option value="B">B. Mandate a single checklist for all sites without allowing local process differences or input.</option>
+          <option value="C">C. Replace local teams with a central improvement team that performs all Kaizens remotely.</option>
+          <option value="D">D. Freeze all processes to maintain consistency instead of encouraging local improvement experiments.</option>
+        </select>
+      </div>
+
+      <!-- Q36 -->
+      <div class="question">
+        <div class="qcase">Case 36 — A manufacturing line reports frequent minor stops that cascade into major downtime events.</div>
+        <div class="small">Which data-driven action prevents small issues from escalating into major production incidents?</div>
+        <label>36.</label>
+        <select name="q36">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Track and trend minor stops, perform Pareto analysis and address high-frequency root causes promptly.</option>
+          <option value="B">B. Ignore minor stops because only major failures warrant maintenance attention and investment.</option>
+          <option value="C">C. Increase shift staffing to react to stops rather than reducing their underlying causes proactively.</option>
+          <option value="D">D. Replace equipment frequently to avoid stops rather than analyzing the specific recurring issues observed.</option>
+        </select>
+      </div>
+
+      <!-- Q37 -->
+      <div class="question">
+        <div class="qcase">Case 37 — A department experiences continuous firefighting with no time for improvements.</div>
+        <div class="small">Which structural change provides capacity for continuous improvement without harming daily delivery?</div>
+        <label>37.</label>
+        <select name="q37">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Allocate protected Kaizen time and small cross-functional teams to tackle recurring issues.</option>
+          <option value="B">B. Eliminate improvement activities and require full focus on daily deliveries only permanently.</option>
+          <option value="C">C. Outsource improvement work to consultants who will implement changes without internal input.</option>
+          <option value="D">D. Rotate staff more frequently so everyone shares firefighting responsibilities equally instead.</option>
+        </select>
+      </div>
+
+      <!-- Q38 -->
+      <div class="question">
+        <div class="qcase">Case 38 — A long value stream includes a gating approval that causes lengthy delays.</div>
+        <div class="small">Which Lean redesign reduces approval delay while preserving necessary control and compliance?</div>
+        <label>38.</label>
+        <select name="q38">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Streamline approval criteria, delegate authority and automate routine checks where appropriate.</option>
+          <option value="B">B. Add more approvers to the gate to increase oversight and reduce individual burden instantly.</option>
+          <option value="C">C. Remove all approvals to speed flow regardless of compliance consequences always.</option>
+          <option value="D">D. Keep the gating process unchanged and increase inventory to cover approval delays routinely.</option>
+        </select>
+      </div>
+
+      <!-- Q39 -->
+      <div class="question">
+        <div class="qcase">Case 39 — A pilot Kanban system caused stockouts at one downstream process unexpectedly.</div>
+        <div class="small">Which corrective action stabilizes the Kanban while maintaining pull discipline across the flow?</div>
+        <label>39.</label>
+        <select name="q39">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Re-evaluate Kanban quantities, adjust safety levels and observe flow to tune replenishment.</option>
+          <option value="B">B. Abandon pull and return to push planning to ensure fixed supply to downstream areas always.</option>
+          <option value="C">C. Double downstream staffing to react to stockouts rather than adjusting replenishment rules now.</option>
+          <option value="D">D. Keep Kanban unchanged but instruct operators to ignore cards when shortages occur repeatedly.</option>
+        </select>
+      </div>
+
+      <!-- Q40 -->
+      <div class="question">
+        <div class="qcase">Case 40 — The organization wants to measure Lean maturity across sites objectively over time.</div>
+        <div class="small">Which approach provides a consistent and actionable assessment of Lean maturity and progress?</div>
+        <label>40.</label>
+        <select name="q40">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use a standardized Lean maturity model with scored audits and improvement roadmaps per site.</option>
+          <option value="B">B. Rely on anecdotal executive impressions of maturity without structured measurement periodically.</option>
+          <option value="C">C. Score sites only based on financial KPIs without considering operational Lean practices directly.</option>
+          <option value="D">D. Avoid comparing sites and keep any maturity assessment informal and unrecorded indefinitely.</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+      <button type="submit" id="submitBtn">Submit Answers</button>
+      <button type="button" id="downloadBtn" class="secondary" disabled>Download Results (.txt)</button>
+      <div style="margin-left:auto" class="muted">Make sure name is filled before submit.</div>
+    </div>
+
+    <div id="submitMsg"></div>
+  </form>
+</div>
+
+<script>
+(function(){
+  // === Config
+  const ACCESS_CODE = "AYAWKOL2025";
+  const PASS_PERCENT = 80;
+  const START_SECONDS = 35 * 60;
+  let totalSeconds = START_SECONDS, timerInterval = null, examStarted = false;
+
+  // === Correct answers randomized but balanced across A-D (example distribution)
+  // Distribution approx: A=11, B=10, C=9, D=10 (total 40)
+  const correctAnswers = [
+    "A","A","A","A","A","A","A","A","A","A", // 1-10
+    "B","B","A","C","B","C","A","B","C","B", // 11-20
+    "D","C","A","B","D","C","A","D","B","D", // 21-30
+    "A","C","B","A","D","A","C","B","A","D"  // 31-40
+  ];
+
+  // === Elements
+  const timerEl = document.getElementById('timer');
+  const examForm = document.getElementById('examForm');
+  const accessSection = document.getElementById('accessCodeSection');
+  const examCodeBtn = document.getElementById('examCodeBtn');
+  const examCodeInput = document.getElementById('examCodeInput');
+  const codeError = document.getElementById('codeError');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const submitMsg = document.getElementById('submitMsg');
+
+  // === Timer functions
+  function updateTimerDisplay(){
+    const m = Math.floor(totalSeconds/60);
+    const s = totalSeconds % 60;
+    timerEl.textContent = (m<10? '0'+m : m) + ':' + (s<10? '0'+s : s);
+  }
+  function startTimer(){
+    clearInterval(timerInterval);
+    timerInterval = setInterval(()=>{
+      totalSeconds--;
+      if(totalSeconds <= 0){
+        clearInterval(timerInterval);
+        lockExam();
+        return;
+      }
+      updateTimerDisplay();
+    },1000);
+  }
+  function lockExam(){
+    examForm.querySelectorAll('select,input').forEach(el => el.disabled = true);
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = '⏰ Time is up! Auto-submitting your answers...';
+    // Small delay so message can appear, then submit
+    setTimeout(()=> submitAnswers(true), 700);
+  }
+
+  // === Anti-cheat
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if((e.ctrlKey || e.metaKey) && ['c','x','u','s','a','p'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+
+  function resetExam(reason){
+    if(!examStarted) return;
+    alert('Exam reset due to ' + reason + '. The page will reload.');
+    location.reload();
+  }
+  document.addEventListener('visibilitychange', ()=> { if(document.hidden && examStarted) resetExam('tab change'); });
+  window.addEventListener('blur', ()=> { if(examStarted) resetExam('window minimize or focus loss'); });
+
+  // === Access code start
+  examCodeBtn.addEventListener('click', function(){
+    if((examCodeInput.value || '').trim() === ACCESS_CODE){
+      codeError.style.display = 'none';
+      accessSection.style.display = 'none';
+      examForm.style.display = 'block';
+      examStarted = true;
+      totalSeconds = START_SECONDS;
+      updateTimerDisplay();
+      startTimer();
+    } else {
+      codeError.style.display = 'block';
+    }
+  });
+  examCodeInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); examCodeBtn.click(); }
+  });
+
+  // === Submission
+  examForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = (document.getElementById('studentName').value || '').trim();
+    if(!name){ alert('Please enter your name before submitting.'); return; }
+    submitAnswers(false);
+  });
+
+  function submitAnswers(isTimeout){
+    clearInterval(timerInterval);
+    examStarted = false;
+    const name = (document.getElementById('studentName').value || '').trim() || 'UNKNOWN';
+    const total = correctAnswers.length;
+    let correct = 0;
+    const report = [];
+
+    report.push('Student: ' + name);
+    report.push('Timestamp: ' + new Date().toLocaleString());
+    report.push('');
+
+    for(let i=1;i<=total;i++){
+      const sel = examForm.querySelector('[name=q' + i + ']');
+      const chosen = sel && sel.value ? sel.value : '';
+      const correctLetter = correctAnswers[i-1] || '';
+      const chosenText = sel ? (sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '') : '';
+      // find correct option text
+      let correctText = '';
+      if(sel){
+        for(let k=0;k<sel.options.length;k++){
+          if(sel.options[k].value === correctLetter){ correctText = sel.options[k].text; break; }
+        }
+      }
+      const isCorrect = chosen === correctLetter;
+      if(isCorrect) correct++;
+      report.push('Q' + i + ': ' + (isCorrect? '✅' : '❌') + ' Your: ' + (chosenText || '(blank)') + ' | Correct: ' + (correctText || '(not found)'));
+    }
+
+    const percent = Math.round((correct/total)*100);
+    const passed = percent >= PASS_PERCENT;
+    report.push('');
+    report.push('Score: ' + correct + '/' + total + ' (' + percent + '%)');
+    report.push('Result: ' + (passed ? 'PASSED ✅' : 'FAILED ❌'));
+
+    // UI feedback: show both raw score and percentage
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = 'Exam submitted. Score: ' + correct + '/' + total + ' (' + percent + '%) — ' + (passed ? 'PASSED ✅' : 'FAILED ❌');
+
+    // Prepare downloadable file
+    const blob = new Blob([report.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    downloadBtn.disabled = false;
+    downloadBtn.onclick = function(){
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (name.replace(/\s+/g,'_') || 'answers') + '_results.txt';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); },3000);
+    };
+
+    // disable form after submission to prevent re-submit tampering (but keep download enabled)
+    examForm.querySelectorAll('select,input,button').forEach(el => {
+      if(el !== downloadBtn) el.disabled = true;
+    });
+  }
+
+  // initial display
+  updateTimerDisplay();
+})();
+</script>
+</body>
+</html>
